@@ -102,67 +102,37 @@ public class TicTacToe {
 		{
 			if (winner == ' ')
 			{
-				int i = 1;
-					switch(i) 
-					{
-					
-					case 1:
-						if ((board[0][0] == currentPlayer) && (board[0][1] == currentPlayer) && (board[0][2] == currentPlayer))
+				for (int row = 0; row < 3; row++)
+				{
+						if ((board[row][0] == currentPlayer) && (board[row][1] == currentPlayer) && (board[row][2] == currentPlayer))
 						{
 							winner = currentPlayer;
 							return true;
 						}
-					case 2:
-						if ((board[1][0] == currentPlayer) && (board[1][1] == currentPlayer) && (board[1][2] == currentPlayer))
+						if ((board[0][row] == currentPlayer) && (board[1][row] == currentPlayer) && (board[2][row] == currentPlayer))
 						{
 							winner = currentPlayer;
 							return true;
 						}
-					case 3:
-						if ((board[2][0] == currentPlayer) && (board[2][1] == currentPlayer) && (board[2][2] == currentPlayer))
-						{
-							winner = currentPlayer;
-							return true;
-						}
-					case 4:
-						if ((board[0][0] == currentPlayer) && (board[1][0] == currentPlayer) && (board[2][0] == currentPlayer))
-						{
-							winner = currentPlayer;
-							return true;
-						}
-					case 5:
-						if ((board[0][1] == currentPlayer) && (board[1][1] == currentPlayer) && (board[2][1] == currentPlayer))
-						{
-							winner = currentPlayer;
-							return true;
-						}
-					case 6:
-						if ((board[0][2] == currentPlayer) && (board[1][2] == currentPlayer) && (board[2][2] == currentPlayer))
-						{
-							winner = currentPlayer;
-							return true;
-						}
-					case 7:
+						
+				}	
 						if ((board[0][0] == currentPlayer) && (board[1][1] == currentPlayer) && (board[2][2] == currentPlayer))
 						{
 							winner = currentPlayer;
 							return true;
 						}
-					case 8:
 						if ((board[2][0] == currentPlayer) && (board[1][1] == currentPlayer) && (board[0][2] == currentPlayer))
 						{
 							winner = currentPlayer;
 							return true;
 						}
-					case 9:
 						if (board[0][0] != ' ' && board[0][1] != ' '  && board[0][2] != ' '  && board[1][0] != ' '  && board[1][1] != ' '  && board[1][2] != ' '  && board[2][0] != ' ' && board[2][1] != ' '  && board[2][2] != ' ')
 						{
 							winner = 'N';
 							return true;
 						}
-						break;
 					}
-				}
+				
 			else if (winner != ' ')
 			{
 				return true;
@@ -175,10 +145,10 @@ public class TicTacToe {
 		 */
 		public String toString()
 		{
-			String returnline = ("+---------------+---------------+---------------+\n|\t") + board[0][0] + "\t|\t" + board[0][1];
-			returnline += "\t|\t" + board[0][2] + "\t|\n|---------------|---------------|---------------|\n|\t" + board[1][0] + "\t|\t" + board[1][1] + "\t|\t";
-			returnline += board[1][2] + "\t|\n|---------------|---------------|---------------|\n|\t" + board[2][0] + "\t|\t" + board[2][1];
-			returnline += "\t|\t" + board[2][2] + "\t|\n+---------------+---------------+---------------+";
+			String returnline = ("+---+---+---+\n| ") + board[0][0] + " | " + board[0][1];
+			returnline += " | " + board[0][2] + " |\n|---|---|---|\n| " + board[1][0] + " | " + board[1][1] + " | ";
+			returnline += board[1][2] + " |\n|---|---|---|\n| " + board[2][0] + " | " + board[2][1];
+			returnline += " | " + board[2][2] + " |\n+---+---+---+";
 			return returnline;
 		}
 
